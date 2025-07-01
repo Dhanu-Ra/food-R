@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #8B4513; /* warm brown */
+    --color-primary-foreground: #FEFCF8; /* warm off-white */
+    
+    /* Secondary Colors */
+    --color-secondary: #6B8E23; /* olive green */
+    --color-secondary-foreground: #FEFCF8; /* warm off-white */
+    
+    /* Accent Colors */
+    --color-accent: #D2691E; /* paprika orange */
+    --color-accent-foreground: #FEFCF8; /* warm off-white */
+    
+    /* Background Colors */
+    --color-background: #FEFCF8; /* warm off-white */
+    --color-surface: #F5F3F0; /* subtle warm gray */
+    
+    /* Text Colors */
+    --color-text-primary: #2D2D2D; /* rich charcoal */
+    --color-text-secondary: #6B6B6B; /* medium gray */
+    
+    /* Status Colors */
+    --color-success: #228B22; /* forest green */
+    --color-success-foreground: #FEFCF8; /* warm off-white */
+    --color-warning: #FF8C00; /* amber orange */
+    --color-warning-foreground: #2D2D2D; /* rich charcoal */
+    --color-error: #CD5C5C; /* muted red */
+    --color-error-foreground: #FEFCF8; /* warm off-white */
+    
+    /* Border Colors */
+    --color-border: rgba(107, 107, 107, 0.2); /* medium gray with opacity */
+    
+    /* Shadow Colors */
+    --color-shadow: rgba(139, 69, 19, 0.1); /* warm brown with opacity */
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-caption: 'Source Sans Pro', sans-serif;
+    --font-data: 'JetBrains Mono', monospace;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .shadow-elevation-1 {
+    box-shadow: 0 2px 4px var(--color-shadow);
+  }
+  
+  .shadow-elevation-2 {
+    box-shadow: 0 4px 8px var(--color-shadow);
+  }
+  
+  .shadow-elevation-3 {
+    box-shadow: 0 8px 16px var(--color-shadow);
+  }
+  
+  .shadow-elevation-4 {
+    box-shadow: 0 16px 32px var(--color-shadow);
+  }
+  
+  .transition-smooth {
+    transition: all 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .transition-medium {
+    transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .transition-slow {
+    transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s linear infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
